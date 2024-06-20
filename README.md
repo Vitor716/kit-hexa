@@ -8,12 +8,12 @@ Projeto desenvolvido para ser utilizado como base para o desenvolvimento de proj
 # 📂 Estrutura de pacotes
   - A estrutura visa separar de maneira lógica os objetos que são classificados como de aplicação, infra e core. A estrutura pode evoluir mas deve manter a lógica 
 
-<img alt="estrutura de pacotes" src="/hexagonal-estrutura-pacotes.drawio.png" width="150px"/>
+<img alt="estrutura de pacotes" src="/hexa/hexagonal-estrutura-pacotes.drawio.png" width="150px"/>
 
 # 🗃️ Diagrama de classes 
   - As classes devem ser serparadas conforme arquitetura abaixo e podem evluir seguindo a lógica da arquitetura e boas práticas 
 
-<img alt="estrutura de pacotes" src="/hexagonal-diagrama de classes.drawio.png" width="380px"/>
+<img alt="estrutura de pacotes" src="/hexa/hexagonal-diagrama de classes.drawio.png" width="380px"/>
 
 # Estrutura do Projeto 
 
