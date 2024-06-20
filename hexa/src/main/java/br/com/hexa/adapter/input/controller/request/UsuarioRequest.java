@@ -1,15 +1,14 @@
 package br.com.hexa.adapter.input.controller.request;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class UsuarioRequest {
 
-    @JsonIgnore
-    private Integer id;
+    @JsonProperty("primeiroNome")
+    private String primeiroNome;
 
-    @JsonProperty("nome")
-    private String nome;
+    @JsonProperty("ultimoNome")
+    private String ultimoNome;
 }
