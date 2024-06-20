@@ -62,3 +62,9 @@ indicar que houve erro voltado ao negócio como não encontrar um registro ou n�
 são exemplos de erro 400. Erros de negócio não devem gerar erro 400.
 ## 5xx
   - Devem representar erros não tratados nos microsserviços, erros de comunicação com entidades externas como conexões à base e outros microsserviços, ou quaisquer outros erros que não sejam de negócio.
+
+docker run --detach --env 
+MYSQL_ROOT_PASSWORD=password --env 
+MYSQL_USER=hexa-user --env 
+MYSQL_PASSWORD=password --env
+ MYSQL_DATASE=hexa-database --name hexa --publish 3306:3306 mysql:8-oracle
