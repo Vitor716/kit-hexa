@@ -1,51 +1,22 @@
 package br.com.hexa.adapter.input.controller.response;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
-
-@Entity(name = "usuario")
+@Setter
+@Getter
 public class UsuarioResponse {
 
-    @Id
-    @GeneratedValue
     private Integer id;
 
-    private String primeiroNome;
-
-    private String ultimoNome;
+    private String nome;
 
     public UsuarioResponse() {
     }
 
-    public UsuarioResponse(Integer id, String primeiroNome, String ultimoNome) {
+    public UsuarioResponse(Integer id, String nome) {
         this.id = id;
-        this.primeiroNome = primeiroNome;
-        this.ultimoNome = ultimoNome;
+        this.nome = nome;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getPrimeiroNome() {
-        return primeiroNome;
-    }
-
-    public void setPrimeiroNome(String primeiroNome) {
-        this.primeiroNome = primeiroNome;
-    }
-
-    public String getUltimoNome() {
-        return ultimoNome;
-    }
-
-    public void setUltimoNome(String ultimoNome) {
-        this.ultimoNome = ultimoNome;
-    }
 }

@@ -1,5 +1,6 @@
 package br.com.hexa.core.service;
 
+import br.com.hexa.adapter.output.repository.UsuarioRepository;
 import br.com.hexa.core.dto.EntradaCriarUsuarioDTO;
 import br.com.hexa.core.dto.SaidaCriarUsuarioDTO;
 import br.com.hexa.core.port.input.CriarUsuarioInputPort;
@@ -13,17 +14,24 @@ public class CriarUsuarioService implements CriarUsuarioInputPort {
 
     private final FormataNomeUseCase formataNomeUseCase;
 
-    public CriarUsuarioService(FormataNomeUseCase formataNomeUseCase) {
+    private final UsuarioRepository repository;
+
+    public CriarUsuarioService(FormataNomeUseCase formataNomeUseCase, UsuarioRepository repository) {
         this.formataNomeUseCase = formataNomeUseCase;
+        this.repository = repository;
     }
 
     @Override
     public SaidaCriarUsuarioDTO criar(EntradaCriarUsuarioDTO entrada) {
 
-        String nome = formataNomeUseCase.formatarNome(entrada);
+        EntradaCriarUsuarioDTO dadosRepository = repository.save(entrada);
 
+        String nomeFormatado = formataNomeUseCase.formatarNome(dadosRepository);
 
+        SaidaCriarUsuarioDTO saida = new SaidaCriarUsuarioDTO();
+        saida.setId(dadosRepository.getId());
+        saida.setNome(nomeFormatado);
 
-        return null;
+        return saida;
     }
 }
